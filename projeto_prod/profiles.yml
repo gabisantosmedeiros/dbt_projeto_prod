@@ -1,0 +1,17 @@
+projeto_prod: # 0 espaços
+  target: dev # 2 espaços
+  outputs: # 2 espaços
+    dev: # 4 espaços
+      type: bigquery # 6 espaços
+      method: service-account # 6 espaços
+      project: "{{ env_var('GCP_DEV_PROJECT') }}" # 6 espaços
+      dataset: "{{ env_var('DBT_DEV_SCHEMA') }}" # 6 espaços
+      threads: 4 # 6 espaços
+      keyfile: "{{ env_var('GCP_DEV_KEYFILE_PATH') }}" # 6 espaços
+    prod:
+      type: bigquery # 6 espaços
+      method: service-account # 6 espaços
+      project: "{{ env_var('GCP_PROD_PROJECT') }}" # 6 espaços
+      dataset: "{{ env_var('DBT_PROD_SCHEMA') }}" # 6 espaços
+      threads: 4 # 6 espaços
+      keyfile: "{{ env_var('GCP_PROD_KEYFILE_PATH') }}" # 6 espaços
